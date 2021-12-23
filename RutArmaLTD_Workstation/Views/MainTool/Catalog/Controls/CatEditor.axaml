@@ -1,0 +1,52 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:VM="clr-namespace:RutArmaLTD_Workstation.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="RutArmaLTD_Workstation.Views.MainTool.Catalog.Controls.CatEditor">
+  <UserControl.DataContext>
+    <VM:NavigationVM/>
+  </UserControl.DataContext>
+
+  <UserControl.Styles>
+    <Style Selector="TextBox.Edit">
+      <Setter Property="UseFloatingWatermark" Value="True"/>
+      <Setter Property="TextWrapping" Value="Wrap"/>
+      <Setter Property="Grid.ColumnSpan" Value="2"/>
+    </Style>
+  </UserControl.Styles>
+    
+
+  <Grid Margin="20">
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition/>
+      <ColumnDefinition/>
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition/>
+      <RowDefinition Height="40"/>
+    </Grid.RowDefinitions>
+
+    <TextBox Classes="Badge" Text="Редактирование информации" FontSize="20"
+             Grid.ColumnSpan="2"
+             VerticalAlignment="Top" HorizontalAlignment="Center"/>
+    
+    <TextBox Classes="Edit" Grid.Row="1" Watermark="название"/>
+    <TextBox Classes="Edit" Grid.Row="2" Watermark="код"/>
+    <TextBox Classes="Edit" Grid.Row="3" Watermark="категория"/>
+    <TextBox Classes="Edit" Grid.Row="4" Watermark="описание"/>
+    <TextBox Classes="Edit" Grid.Row="5" Watermark="единица измерения"/>
+
+    <Button Grid.Column="0" Grid.Row="7" Classes="Primary" Margin="0 0 10 0"
+            Content="Вернуть все поля" Padding="0"/>
+    <Button Grid.Column="1" Grid.Row="7" Margin="10 0 0 0"
+            Click="FinishEditing" Content="Применить" Padding="0"/>
+  </Grid>
+</UserControl>

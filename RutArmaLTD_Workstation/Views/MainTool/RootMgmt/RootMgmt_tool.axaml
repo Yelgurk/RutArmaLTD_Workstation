@@ -4,5 +4,76 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="RutArmaLTD_Workstation.Views.MainTool.RootMgmt.RootMgmt_tool">
-  Roots
+  <Grid Margin="20">
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition/>
+      <ColumnDefinition/>
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition/>
+      <RowDefinition Height="40"/>
+    </Grid.RowDefinitions>
+    
+    <TextBox Classes="PrimaryBadge" Text="Пользователи" FontSize="20"
+             Grid.ColumnSpan="2" HorizontalAlignment="Center"/>
+
+    <Border BorderThickness="0 1" BorderBrush="Gray"
+            Grid.ColumnSpan="2" Grid.Row="1" Margin="0 10">
+      <ScrollViewer VerticalScrollBarVisibility="Visible">
+        <ListBox>
+          <ListBoxItem>
+            <ListBoxItem.Content>
+              <StackPanel>
+                <TextBlock Text="Пользователь-ФИО (login #1)"/>
+                <TextBlock Classes="Caption" Text="Менеджер" />
+                <TextBlock Classes="Caption" Text="Разблокирован" />
+              </StackPanel>
+            </ListBoxItem.Content>
+          </ListBoxItem>
+          <ListBoxItem>
+            <ListBoxItem.Content>
+              <StackPanel>
+                <TextBlock Text="Пользователь-ФИО (login #2)"/>
+                <TextBlock Classes="Caption" Text="Мерчандайзер" />
+                <TextBlock Classes="Caption" Text="Разблокирован" />
+              </StackPanel>
+            </ListBoxItem.Content>
+          </ListBoxItem>
+          <ListBoxItem>
+            <ListBoxItem.Content>
+              <StackPanel>
+                <TextBlock Text="Пользователь-ФИО (login #3)"/>
+                <TextBlock Classes="Caption" Text="Кассир" />
+                <TextBlock Classes="Caption" Text="Разблокирован" />
+              </StackPanel>
+            </ListBoxItem.Content>
+          </ListBoxItem>
+          <ListBoxItem>
+            <ListBoxItem.Content>
+              <StackPanel>
+                <TextBlock Text="Пользователь-ФИО (login #4)"/>
+                <TextBlock Classes="Caption" Text="Администратор" />
+                <TextBlock Classes="Caption" Text="Разблокирован" />
+              </StackPanel>
+            </ListBoxItem.Content>
+          </ListBoxItem>
+          <ListBoxItem>
+            <ListBoxItem.Content>
+              <StackPanel>
+                <TextBlock Text="Пользователь-ФИО (login #5)"/>
+                <TextBlock Classes="Caption" Text="Мерчандайзер" />
+                <TextBlock Classes="Caption" Text="Заблокирован" />
+              </StackPanel>
+            </ListBoxItem.Content>
+          </ListBoxItem>
+        </ListBox>
+      </ScrollViewer>
+    </Border>
+    
+    <Button Grid.Column="0" Grid.Row="2" Margin="0 0 10 0"
+            Content="Заблокировать" Padding="0" Classes="Primary"/>
+    <Button Grid.Column="1" Grid.Row="2" Margin="10 0 0 0"
+            Content="Разблокировать" Padding="0"/>
+  </Grid>
 </UserControl>

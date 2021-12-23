@@ -1,0 +1,109 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:VM="clr-namespace:RutArmaLTD_Workstation.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="RutArmaLTD_Workstation.Views.MainTool.Catalog.Controls.CatViewer">
+  <UserControl.DataContext>
+    <VM:NavigationVM/>
+  </UserControl.DataContext>
+  
+  <UserControl.Styles>
+    <Style Selector="TextBlock.About">
+      <Setter Property="TextWrapping" Value="Wrap"/>
+    </Style>
+  </UserControl.Styles>
+  
+  <Grid Margin="20">
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="2*"/>
+      <ColumnDefinition Width="3*"/>
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition/>
+      <RowDefinition Height="50"/>
+    </Grid.RowDefinitions>
+
+    <Border BorderThickness="0 0 5 0"
+            BorderBrush="Gray"
+            Grid.RowSpan="2">
+      <TreeView BorderThickness="0">
+        <TreeViewItem Header="Категория #1">
+          <TreeViewItem Header="Товар #1"/>
+          <TreeViewItem Header="Товар #3"/>
+          <TreeViewItem Header="Товар #5"/>
+        </TreeViewItem>
+        <TreeViewItem Header="Категория #2">
+          <TreeViewItem Header="Товар #2"/>
+          <TreeViewItem Header="Товар #4"/>
+        </TreeViewItem>
+      </TreeView>
+    </Border>
+
+    <StackPanel Grid.Column="1" Margin="20 0 0 0">
+      <TextBox Classes="Badge" Text="Информация" FontSize="16"/>
+      <Grid>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="145"/>
+          <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+          <RowDefinition/>
+          <RowDefinition/>
+          <RowDefinition/>
+          <RowDefinition/>
+          <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Назавние:" Classes="About"
+                   Grid.Column="0" Grid.Row="0"/>
+        <TextBlock Text="Товар #1" Classes="About"
+                   Grid.Column="1" Grid.Row="0"/>
+        
+        <TextBlock Text="Код:" Classes="About"
+                   Grid.Column="0" Grid.Row="1"/>
+        <TextBlock Text="10293847" Classes="About"
+                   Grid.Column="1" Grid.Row="1"/>
+
+        <TextBlock Text="Категория:" Classes="About"
+                   Grid.Column="0" Grid.Row="2"/>
+        <TextBlock Text="Категория #1" Classes="About"
+                   Grid.Column="1" Grid.Row="2"/>
+
+        <TextBlock Text="Описание:" Classes="About"
+                   Grid.Column="0" Grid.Row="3"/>
+        <TextBlock Text="Товар #1 используется тут и там"  Classes="About"
+                   Grid.Column="1" Grid.Row="3"/>
+
+        <TextBlock Text="Ед. измерения:" Classes="About"
+                   Grid.Column="0" Grid.Row="4"/>
+        <TextBlock Text="штуки"  Classes="About"
+                   Grid.Column="1" Grid.Row="4"/>
+      </Grid>
+      
+      <TextBox Classes="PrimaryBadge" Text="Актуальная информация" FontSize="16" Margin="0 20 0 0"/>
+      <Grid>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="145"/>
+          <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+          <RowDefinition/>
+          <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="В наличии на складе:" Classes="About"
+                   Grid.Column="0" Grid.Row="0"/>
+        <TextBlock Text="Да" Classes="About"
+                   Grid.Column="1" Grid.Row="0"/>
+
+        <TextBlock Text="В пути на склад:" Classes="About"
+                   Grid.Column="0" Grid.Row="1"/>
+        <TextBlock Text="Нет" Classes="About"
+                   Grid.Column="1" Grid.Row="1"/>
+      </Grid>
+    </StackPanel>
+    <Button Grid.Column="1" Grid.Row="1" Classes="Primary"
+            Click="StartEditing" Margin="20 10 0 0"
+            Content="Редактировать" Padding="0"/>
+  </Grid>
+</UserControl>

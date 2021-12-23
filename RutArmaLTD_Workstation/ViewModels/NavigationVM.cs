@@ -1,4 +1,5 @@
 ﻿using ReactiveUI;
+using RutArmaLTD_Workstation.Models;
 using RutArmaLTD_Workstation.Views.MainTool;
 using RutArmaLTD_Workstation.Views.MainTool.Account;
 using RutArmaLTD_Workstation.Views.MainTool.Catalog;
@@ -12,6 +13,8 @@ namespace RutArmaLTD_Workstation.ViewModels
 {
     public class NavigationVM : ReactiveObject
     {
+        public static BoolProperty CategorySlider { get; } = new BoolProperty();
+
         private static SignInUp_nav SIUN { get; } = new SignInUp_nav();
         private static StockState_nav SSN { get; } = new StockState_nav();
         private static CatEdit_nav CEN { get; } = new CatEdit_nav();
@@ -19,14 +22,19 @@ namespace RutArmaLTD_Workstation.ViewModels
         private static Account_nav ACCN { get; } = new Account_nav();
         private static StoreTill_nav STN { get; } = new StoreTill_nav();
 
-        public NavigationVM()
+        public bool Initialize
         {
-            AddControl(SIUN);
-            AddControl(SSN);
-            AddControl(CEN);
-            AddControl(AMN);
-            AddControl(ACCN);
-            AddControl(STN);
+            set {
+                if (value)
+                {
+                    AddControl(SIUN);
+                    AddControl(SSN);
+                    AddControl(CEN);
+                    AddControl(AMN);
+                    //AddControl(ACCN);
+                    AddControl(STN);
+                }
+            }
         }
 
         private IToolNav tool = null;

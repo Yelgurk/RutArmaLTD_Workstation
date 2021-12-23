@@ -4,9 +4,7 @@ namespace RutArmaLTD_Workstation.Models
 {
     public class BoolProperty : ReactiveObject
     {
-        public BoolProperty(bool state = true) => this.state = state;
-
-        private bool state;
+        private bool state = true;
         public bool State
         {
             get => state;

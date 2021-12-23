@@ -2,7 +2,79 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:VM="clr-namespace:RutArmaLTD_Workstation.ViewModels"
+             xmlns:Control="clr-namespace:RutArmaLTD_Workstation.Views.MainTool.Catalog.Controls"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="RutArmaLTD_Workstation.Views.MainTool.Catalog.CatEdit_tool">
-  Categories
+  <UserControl.DataContext>
+    <VM:NavigationVM/>
+  </UserControl.DataContext>
+  
+  <UserControl.Styles>
+    <Style Selector="Grid.Slider">
+      <Setter Property="Width" Value="{Binding $parent[0].Bounds.Width}"/>
+      <Setter Property="Height" Value="{Binding $parent[0].Bounds.Height}"/>
+    </Style>
+
+    <Style Selector="Grid.Slider.First">
+      <Setter Property="Canvas.Right" Value="0"/>
+    </Style>
+
+    <Style Selector="Grid.Slider.First.Def">
+      <Style.Animations>
+        <Animation Duration="0:0:0.2" FillMode="Forward" Easing="CubicEaseOut">
+          <KeyFrame Cue="100%">
+            <Setter Property="Canvas.Right" Value="0"/>
+          </KeyFrame>
+        </Animation>
+      </Style.Animations>
+    </Style>
+
+    <Style Selector="Grid.Slider.First.Move">
+      <Style.Animations>
+        <Animation Duration="0:0:0.2" FillMode="Forward" Easing="CubicEaseOut">
+          <KeyFrame Cue="100%">
+            <Setter Property="Canvas.Right" Value="{Binding $parent[0].Bounds.Width}"/>
+          </KeyFrame>
+        </Animation>
+      </Style.Animations>
+    </Style>
+
+    <Style Selector="Grid.Slider.Second">
+      <Setter Property="Canvas.Left" Value="{Binding $parent[0].Bounds.Width}"/>
+    </Style>
+    
+    <Style Selector="Grid.Slider.Second.Def">
+      <Style.Animations>
+        <Animation Duration="0:0:0.2" FillMode="Forward" Easing="CubicEaseOut">
+          <KeyFrame Cue="100%">
+            <Setter Property="Canvas.Left" Value="{Binding $parent[0].Bounds.Width}"/>
+          </KeyFrame>
+        </Animation>
+      </Style.Animations>
+    </Style>
+
+    <Style Selector="Grid.Slider.Second.Move">
+      <Style.Animations>
+        <Animation Duration="0:0:0.2" FillMode="Forward" Easing="CubicEaseOut">
+          <KeyFrame Cue="100%">
+            <Setter Property="Canvas.Left" Value="0"/>
+          </KeyFrame>
+        </Animation>
+      </Style.Animations>
+    </Style>
+  </UserControl.Styles>
+  
+  <Canvas ClipToBounds="True">
+    <Grid Classes="Slider First"
+          Classes.Def="{Binding CategorySlider.State}"
+          Classes.Move="{Binding !CategorySlider.State}">
+      <Control:CatViewer/>
+    </Grid>
+    <Grid Classes="Slider Second"
+          Classes.Def="{Binding CategorySlider.State}"
+          Classes.Move="{Binding !CategorySlider.State}">
+      <Control:CatEditor/>
+    </Grid>
+  </Canvas>
 </UserControl>

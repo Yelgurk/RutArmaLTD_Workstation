@@ -3,6 +3,87 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:avalonia="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
              x:Class="RutArmaLTD_Workstation.Views.MainTool.Store.StoreTill_tool">
-  Store
+  <Grid>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition/>
+      <ColumnDefinition/>
+      <ColumnDefinition/>
+      <ColumnDefinition/>
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition/>
+      <RowDefinition Height="50"/>
+      <RowDefinition Height="50"/>
+    </Grid.RowDefinitions>
+
+    <TextBox Classes="Badge" Text="Чек" Width="200" FontSize="20" Grid.ColumnSpan="2"
+             VerticalAlignment="Top" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
+    <TextBox Classes="Badge" Grid.Column="2" Grid.ColumnSpan="2" Text="Касса" Width="200" FontSize="20"
+             VerticalAlignment="Top" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
+
+    <Border Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="2"
+            BorderThickness="0 0 1 0"
+            BorderBrush="Gray">
+      <ListBox>
+        <ListBoxItem>
+          <Grid>
+            <StackPanel HorizontalAlignment="Left">
+              <TextBlock Text="Товар #1 [Код, Категория]"/>
+              <TextBlock Classes="Caption" Text="5шт * 3.20р" />
+            </StackPanel>
+
+            <TextBox Classes="PrimaryBadge" Text="16.00р" HorizontalAlignment="Right"/>
+          </Grid>
+        </ListBoxItem>
+
+        <ListBoxItem>
+          <Grid>
+            <StackPanel HorizontalAlignment="Left">
+              <TextBlock Text="Товар #3 [Код, Категория]"/>
+              <TextBlock Classes="Caption" Text="3шт * 4.75р" />
+            </StackPanel>
+
+            <TextBox Classes="PrimaryBadge" Text="14.25р" HorizontalAlignment="Right"/>
+          </Grid>
+        </ListBoxItem>
+
+        <ListBoxItem>
+          <Grid>
+            <StackPanel HorizontalAlignment="Left">
+              <TextBlock Text="Товар #5 [Код, Категория]"/>
+              <TextBlock Classes="Caption" Text="1шт * 8.46р" />
+            </StackPanel>
+
+            <TextBox Classes="PrimaryBadge" Text="8.46р" HorizontalAlignment="Right"/>
+          </Grid>
+        </ListBoxItem>
+      </ListBox>
+    </Border>
+
+    <Button Grid.Row="3" Classes="Primary" IsEnabled="False" Content="Удалить" Padding="0" Margin="5"/>
+    <Button Grid.Row="3" Classes="Primary" IsEnabled="False" Grid.Column="1" Content="Другое кол-во" Padding="0" Margin="5"/>
+
+    <StackPanel Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2" Margin="10 0">
+      <TextBox UseFloatingWatermark="True" Watermark="чек" Text="38.71" FontSize="26"/>
+      <TextBox UseFloatingWatermark="True" Watermark="внесено" Text="40.00" FontSize="26"/>
+      <TextBox UseFloatingWatermark="True" Watermark="сдача" Text="1.29" FontSize="26"/>
+    </StackPanel>
+
+    <Button Grid.Column="2" Grid.Row="2" Grid.RowSpan="2" Margin="5">
+      <DockPanel>
+        <avalonia:MaterialIcon Kind="Nfc" Width="24" Height="24"/>
+        <avalonia:MaterialIcon Kind="CardPlus" Width="24" Height="24"/>
+        <TextBlock Text="Оплата&#x0a;картой" FontSize="16" Margin="10 0"/>
+      </DockPanel>
+    </Button>
+    <Button Grid.Column="3" Grid.Row="2" Grid.RowSpan="2" Margin="5">
+      <DockPanel>
+        <avalonia:MaterialIcon Kind="CashMultiple" Width="24" Height="24"/>
+        <TextBlock Text="Оплата&#x0a;наличными" FontSize="16" Margin="10 0"/>
+      </DockPanel>
+    </Button>
+  </Grid>
 </UserControl>
