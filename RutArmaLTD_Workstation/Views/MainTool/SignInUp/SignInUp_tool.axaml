@@ -1,0 +1,67 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="RutArmaLTD_Workstation.Views.MainTool.SignInUp.SignInUp_tool">
+  <UserControl.Styles>
+    <Style Selector="TextBox.Input">
+      <Setter Property="Grid.Column" Value="1"/>
+      <Setter Property="Grid.ColumnSpan" Value="3"/>
+    </Style>
+  </UserControl.Styles>
+
+  <ScrollViewer>
+    <StackPanel>
+      <TextBlock Text="Регистрация"
+                 HorizontalAlignment="Center"
+                 FontSize="24"
+                 Margin="10"/>
+
+      <Grid VerticalAlignment="Center"
+            HorizontalAlignment="Stretch">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition/>
+          <ColumnDefinition Width="120"/>
+          <ColumnDefinition Width="30"/>
+          <ColumnDefinition Width="150"/>
+          <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+          <RowDefinition/>
+          <RowDefinition/>
+          <RowDefinition/>
+          <RowDefinition/>
+          <RowDefinition/>
+          <RowDefinition/>
+          <RowDefinition/>
+          <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <TextBox UseFloatingWatermark="True" Watermark="Фамилия" Classes="Input" Grid.Row="0"/>
+
+        <TextBox UseFloatingWatermark="True" Watermark="Имя" Classes="Input" Grid.Row="1"/>
+
+        <TextBox UseFloatingWatermark="True" Watermark="Отчество" Classes="Input" Grid.Row="2"/>
+
+        <TextBox UseFloatingWatermark="True" Watermark="Новый логин" Classes="Input" Grid.Row="3"/>
+
+        <TextBox UseFloatingWatermark="True" Watermark="Новый пароль" Classes="Input" Grid.Row="4"/>
+
+        <RadioButton GroupName="NewUserRoots" Content="Кассир" Margin="0 10"
+                     Grid.Column="1" Grid.Row="5"/>
+        <RadioButton GroupName="NewUserRoots" Content="Мерчандайзер/Грузчик"
+                     Grid.Column="2" Grid.Row="5" Grid.ColumnSpan="2"/>
+        <RadioButton GroupName="NewUserRoots" Content="Менеджер"
+                     Grid.Column="1" Grid.Row="6"/>
+        <RadioButton GroupName="NewUserRoots" Content="Администратор" Margin="0 0 0 10"
+                     Grid.Column="2" Grid.Row="6" Grid.ColumnSpan="2"/>
+        
+        <Button Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="2" Margin="0 10 5 20"
+                Content="Очистить всё" Classes="Primary"/>
+        <Button Grid.Column="3" Grid.Row="7" Margin="5 10 5 20"
+                Content="Далее"/>
+      </Grid>
+    </StackPanel>
+  </ScrollViewer>
+</UserControl>

@@ -1,0 +1,14 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="RutArmaLTD_Workstation.Views.MainTool.Catalog.CatEdit_nav"
+             xmlns:avalonia="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+             VerticalContentAlignment="Top">
+  <DockPanel Margin="20 -2 20 6">
+    <avalonia:MaterialIcon Kind="Shopping" Height="24" Width="24"/>
+    <TextBlock Text="Каталог"
+               Margin="10 5"/>
+  </DockPanel>
+</UserControl>

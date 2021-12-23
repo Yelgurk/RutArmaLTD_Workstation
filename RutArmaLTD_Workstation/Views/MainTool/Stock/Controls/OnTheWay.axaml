@@ -1,0 +1,43 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="RutArmaLTD_Workstation.Views.MainTool.Stock.Controls.OnTheWay">
+  <UserControl.Styles>
+    <Style Selector="ListBoxItem">
+      <Setter Property="HorizontalAlignment" Value="Stretch"/>
+      <Setter Property="HorizontalContentAlignment" Value="Left"/>
+      <Setter Property="Margin" Value="0 5"/>
+      <Setter Property="Padding" Value="5 0"/>
+      <Setter Property="BorderThickness" Value="4 0 0 0"/>
+    </Style>
+  </UserControl.Styles>
+
+  <Border BorderThickness="2"
+          BorderBrush="Gray"
+          Margin="20">
+    <ScrollViewer VerticalScrollBarVisibility="Visible">
+      <ListBox>
+        <ListBoxItem>
+          <ListBoxItem.Content>
+            <StackPanel>
+              <TextBlock Text="- Товар#1  20шт"/>
+              <TextBlock Text="- Товар#3  15шт"/>
+              <TextBlock Text="- Товар#5  10шт"/>
+            </StackPanel>
+          </ListBoxItem.Content>
+        </ListBoxItem>
+
+        <ListBoxItem>
+          <ListBoxItem.Content>
+            <StackPanel>
+              <TextBlock Text="- Товар#4  25шт"/>
+              <TextBlock Text="- Товар#2  5шт"/>
+            </StackPanel>
+          </ListBoxItem.Content>
+        </ListBoxItem>
+      </ListBox>
+    </ScrollViewer>
+  </Border>
+</UserControl>

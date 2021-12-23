@@ -1,0 +1,31 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="RutArmaLTD_Workstation.Views.MainTool.Stock.Controls.InStock">
+  <UserControl.Styles>
+    <Style Selector="ListBoxItem">
+      <Setter Property="HorizontalAlignment" Value="Left"/>
+      <Setter Property="HorizontalContentAlignment" Value="Left"/>
+      <Setter Property="Margin" Value="0 5"/>
+      <Setter Property="Padding" Value="5 0"/>
+      <Setter Property="BorderThickness" Value="4 0 0 0"/>
+    </Style>
+  </UserControl.Styles>
+  
+  <Grid Margin="20">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition/>
+    </Grid.RowDefinitions>
+    <TextBox UseFloatingWatermark="True" Watermark="код, товар, категория"/>
+    <ListBox BorderThickness="2" BorderBrush="Gray" Grid.Row="1">
+      <ListBoxItem Content="Товар#1 0101929               На складе: 10шт"/>
+      <ListBoxItem Content="Товар#2 9393848               На складе: 20шт"/>
+      <ListBoxItem Content="Товар#3 7474656               На складе: 30шт"/>
+      <ListBoxItem Content="Товар#4 6565473               На складе: 40шт" />
+      <ListBoxItem Content="Товар#5 8484030               На складе: 50шт"/>
+    </ListBox>
+  </Grid>
+</UserControl>

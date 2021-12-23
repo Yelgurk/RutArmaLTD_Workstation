@@ -3,15 +3,105 @@
         xmlns:vm="using:RutArmaLTD_Workstation.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d"
+        d:DesignWidth="800" d:DesignHeight="450"
+        MinWidth="600" MinHeight="440"
+        Width="700" Height="500"
         x:Class="RutArmaLTD_Workstation.Views.MainWindow"
-        Icon="/Assets/avalonia-logo.ico"
-        Title="RutArmaLTD_Workstation">
+        Title="RutArmaLTD_Workstation"
+        WindowStartupLocation="CenterScreen"
+        Background="WhiteSmoke"
+        xmlns:avalonia="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia">
+  <!--Icon="/Assets/avalonia-logo.ico" Window-open-tag-prop-->
+  <!--Window.Resources>
+    <vm:SWindowProps x:Key="SWP"/>
+    <vm:SMainNav x:Key="SMN"/>
+  </Window.Resources-->
 
-    <Design.DataContext>
-        <vm:MainWindowViewModel/>
-    </Design.DataContext>
+  <Window.DataContext>
+    <vm:NavigationVM/>
+  </Window.DataContext>
 
-    <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+  <Window.Styles>
+    <Style Selector="Border.Card.Tight">
+      <Setter Property="Padding" Value="-2"/>
+      <Setter Property="ClipToBounds" Value="True"/>
+    </Style>
 
+    <Style Selector="Border.Card.Big">
+      <Setter Property="Padding" Value="-2"/>
+      <Setter Property="ClipToBounds" Value="True"/>
+    </Style>
+    
+    <Style Selector="ListBox.NavBar">
+      <Setter Property="Padding" Value="-7 -5"/>
+      <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Hidden"/>
+      <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Hidden"/>
+      <Setter Property="VirtualizationMode" Value="None"/>
+    </Style>
+
+    <Style Selector="ListBox.NavBar > ListBoxItem">
+      <Setter Property="Background" Value="Transparent"/>
+      <Setter Property="BorderBrush" Value="LightGray"/>
+      <Setter Property="BorderThickness" Value="0 0 0 5"/>
+      <Setter Property="Padding" Value="0"/>
+      <Setter Property="Width" Value="240"/>
+    </Style>
+
+    <Style Selector="Ellipse.Splash">
+      <Setter Property="Fill" Value="Orange"/>
+      <Setter Property="Opacity" Value="0.10"/>
+      <Setter Property="Width" Value="0"/>
+      <Setter Property="Height" Value="0"/>
+      <Style.Animations>
+        <Animation Duration="0:0:1.5"
+                   Delay="0:0:0.5"
+                   RepeatCount="INFINITE">
+          <KeyFrame Cue="100%">
+            <Setter Property="Opacity" Value="0"/>
+            <Setter Property="Width" Value="200"/>
+            <Setter Property="Height" Value="200"/>
+          </KeyFrame>
+        </Animation>
+      </Style.Animations>
+    </Style>
+  </Window.Styles>
+
+  <Grid>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="240"/>
+      <ColumnDefinition/>
+    </Grid.ColumnDefinitions>
+
+    <Border Classes="Card Tight"
+            Grid.Column="0"
+            VerticalAlignment="Top">
+      <ListBox Classes="NavBar"
+               Items="{Binding ToolsNav}"
+               SelectedItem="{Binding SelectedTool, Mode=TwoWay}"/>
+
+    </Border>
+
+    <Border Classes="Card Big"
+            Grid.Column="1">
+      <Grid Background="WhiteSmoke">
+        <Grid VerticalAlignment="Center"
+              HorizontalAlignment="Center"
+              Height="200"
+              Width="200">
+          <Ellipse Classes="Splash"/>
+          <StackPanel VerticalAlignment="Center">
+            <avalonia:MaterialIcon Kind="DinosaurPixel"
+                                   Width="40"
+                                   Height="40"/>
+            <Label Content="Выберите инструмент&#x0a;     на панели слева!"
+                   HorizontalContentAlignment="Center"/>
+          </StackPanel>
+        </Grid>
+        <UserControl Background="White"
+                     Content="{Binding SelectedTool.ToolControl}"
+                     IsVisible="{Binding !!SelectedTool}"/>
+      </Grid>
+    </Border>
+  </Grid>
 </Window>

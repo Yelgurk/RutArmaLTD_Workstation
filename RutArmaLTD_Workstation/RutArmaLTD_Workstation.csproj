@@ -5,8 +5,6 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="Models\" />
-    <AvaloniaResource Include="Assets\**" />
     <None Remove=".gitignore" />
   </ItemGroup>
   <ItemGroup>
@@ -15,5 +13,21 @@
     <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
     <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="0.10.10" />
     <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.10" />
+    <PackageReference Include="Citrus.Avalonia" Version="1.5.1" />
+    <PackageReference Include="Material.Icons.Avalonia" Version="1.0.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Icons\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Views\MainTool\RootMgmt\RootMgmt_tool.axaml.cs">
+      <DependentUpon>RootMgmt_tool.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\MainTool\RootMgmt\RootMgmt_nav.axaml.cs">
+      <DependentUpon>RootMgmt_nav.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\MainTool\SignInUp\SignInUp_tool.axaml.cs">
+      <DependentUpon>SignInUp_tool.axaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 </Project>

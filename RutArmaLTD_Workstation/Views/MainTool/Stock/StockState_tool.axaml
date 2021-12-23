@@ -1,0 +1,30 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="RutArmaLTD_Workstation.Views.MainTool.Stock.StockState_tool"
+             xmlns:avalonia="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+             xmlns:stock="clr-namespace:RutArmaLTD_Workstation.Views.MainTool.Stock.Controls">
+  <TabControl TabStripPlacement="Top">
+    <TabItem HorizontalContentAlignment="Center">
+      <TabItem.Header>
+        <DockPanel>
+          <avalonia:MaterialIcon Kind="GarageOpenVariant" Width="30" Height="30"/>
+          <TextBlock Text="В наличии на складе" Foreground="White" Margin="10"/>
+        </DockPanel>
+      </TabItem.Header>
+      <stock:InStock/>
+    </TabItem>
+
+    <TabItem HorizontalContentAlignment="Center">
+      <TabItem.Header>
+        <DockPanel>
+          <avalonia:MaterialIcon Kind="TruckDelivery" Width="30" Height="30"/>
+          <TextBlock Text="В пути на склад" Foreground="White" Margin="10"/>
+        </DockPanel>
+      </TabItem.Header>
+      <stock:OnTheWay/>
+    </TabItem>
+  </TabControl>
+</UserControl>

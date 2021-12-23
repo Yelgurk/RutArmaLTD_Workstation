@@ -1,0 +1,40 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="RutArmaLTD_Workstation.Views.MainTool.SignInUp.SignInUp_nav"
+             VerticalContentAlignment="Top"
+             HorizontalContentAlignment="Center">
+  <UserControl.Styles>
+    <Style Selector="Expander.UserAccount">
+      <Setter Property="BorderThickness" Value="0"/>
+      <Setter Property="Width" Value="240"/>
+      <Setter Property="Padding" Value="15 5"/>
+    </Style>
+  </UserControl.Styles>
+  
+  <Expander Classes="UserAccount" IsExpanded="False">
+    <Expander.Header>
+      <DockPanel>
+        <TextBlock Text="Не авторизован"/>
+      </DockPanel>
+    </Expander.Header>
+    <Grid>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition/>
+        <ColumnDefinition Width="10"/>
+        <ColumnDefinition/>
+      </Grid.ColumnDefinitions>
+      <Grid.RowDefinitions>
+        <RowDefinition/>
+        <RowDefinition/>
+        <RowDefinition/>
+      </Grid.RowDefinitions>
+      <TextBox UseFloatingWatermark="True" Watermark="Логин" Grid.ColumnSpan="3" Grid.Row="0"/>
+      <TextBox UseFloatingWatermark="True" Watermark="Пароль" Grid.ColumnSpan="3" Grid.Row="1"/>
+      <Button Content="Войти" Grid.Column="0" Grid.Row="2"/>
+      <Button Content="Создать" Grid.Column="2" Grid.Row="2"/>
+    </Grid>
+  </Expander>
+</UserControl>

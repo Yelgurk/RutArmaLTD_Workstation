@@ -1,6 +1,9 @@
 using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
+using Avalonia.Styling;
+using RutArmaLTD_Workstation.ViewModels;
 
 namespace RutArmaLTD_Workstation.Views
 {
@@ -9,6 +12,7 @@ namespace RutArmaLTD_Workstation.Views
         public MainWindow()
         {
             InitializeComponent();
+
 #if DEBUG
             this.AttachDevTools();
 #endif

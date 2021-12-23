@@ -1,5 +1,6 @@
 using Avalonia.Controls;
 using Avalonia.Controls.Templates;
+using ReactiveUI;
 using RutArmaLTD_Workstation.ViewModels;
 using System;
 
@@ -24,7 +25,7 @@ namespace RutArmaLTD_Workstation
 
         public bool Match(object data)
         {
-            return data is ViewModelBase;
+            return data is ReactiveObject;
         }
     }
 }
